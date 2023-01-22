@@ -7,6 +7,9 @@ class Genre(models.Model):
     #attribute for name str 
     name = models.CharField(max_length=255)
 
+    #magic method 
+    def __str__(self):
+        return self.name
 
 class Movie(models.Model): 
     # INT FLOAT
