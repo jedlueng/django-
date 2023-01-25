@@ -11,7 +11,10 @@ from . import views
  
 #URL configuration 
 urlpatterns  = [
-    path('',views.index, name = 'index' )
+    path('',views.index, name = 'movies_index' ),
+    #movies/1 , movies /2  
+    #views.detail function is needed (in views.py)
+    path('<int:movie_id>', views.detail, name = 'movies_detail' )
 ]
 
 
