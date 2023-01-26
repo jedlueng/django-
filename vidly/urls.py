@@ -18,10 +18,13 @@ from django.urls import path, include
 #import include if you want to create a new path for that app 
 #api 
 from api.models import MovieResource
+from . import views
 
 movie_resource = MovieResource()
 
 urlpatterns = [
+    #home
+    path('', views.home),
     path("admin/", admin.site.urls),
     #Create a new path object for movies app 
     path("movies/", include('movies.urls')),
