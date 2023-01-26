@@ -16,9 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 #import include if you want to create a new path for that app 
+#api 
+from api.models import MovieResource
+
+movie_resource = MovieResource()
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     #Create a new path object for movies app 
-    path("movies/", include('movies.urls'))
+    path("movies/", include('movies.urls')),
+    #api 
+    path("api/", include(movie_resource.urls)),
+
 ]
